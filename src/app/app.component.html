@@ -1,20 +1,37 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
+<h1>Front End Exam</h1>
+
+<h2>Add User</h2>
+<div class="input">
+     <input type="text" name="" value="" placeholder="Name" [(ngModel)]="api.newUser.name">
+    <input type="email" name="email" value="" placeholder="Email" [(ngModel)]="api.newUser.email">
+    <input type="text" name="" value="" placeholder="Address" [(ngModel)]="api.newUser.address">
+    <input type="number" name="" value="" placeholder="Phone Number" [(ngModel)]="api.newUser.phoneNumber"><br>  
+    <button type="" (click)="api.AddUser()">Add User</button> 
+</div>
+
+<div class="container">
+<h2>List User</h2>
+<div class="data">
+<table>
+<tr>
+  <th>ID</th>
+  <th>Nama</th>
+  <th>Email</th>
+  <th>Address</th>
+  <th>Phone Number</th>
+  <th>Action</th>
+</tr>
+ <tr *ngFor="let u of api.UserList">
+  <td> {{ u.id }} </td>
+  <td> {{ u.name }} </td>
+  <td> {{ u.email }} </td>
+  <td> {{ u.address }} </td>
+  <td> {{ u.phoneNumber }} </td>
+  <td>
+    <button type="button" class="btn btn-danger" (click)="api.DeleteUser(u.id)" >Delete</button>
+  </td>
+</tr> 
+</table>        
+</div>        
+</div>

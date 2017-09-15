@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { MyDataService } from "./my-data.service";
+import { Http } from "@angular/http";
+import { Observable } from "rxjs/Rx";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  constructor(private api : MyDataService){
+  }
+
+
 }
